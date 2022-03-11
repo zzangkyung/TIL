@@ -2,7 +2,8 @@
 
 ES6부터 템플릿 리터럴(Template literal)이라고 불리는 새로운 문자열 표기법을 도입하였다. 템플릿 리터럴은 ‘ 또는 “ 같은 통상적인 따옴표 문자 대신 백틱(backtick) 문자 `를 사용한다.
 
-## 멀티라인 문자열
+
+## 멀티라인 문자열 (Multi-line)
 
 일반 문자열에서는 줄바꿈(개행)이 허용되지 않는다.
 
@@ -30,6 +31,7 @@ console.log(template);
   <li><a href="#home">Home</a></li>
 </ul>
 ```
+
 
 ## 표현식 삽입 (String Interpolation)
 

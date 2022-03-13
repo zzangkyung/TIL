@@ -55,8 +55,9 @@ console.log(pow); // [ 1, 4, 9 ]
 
 화살표 함수는 Lexical this를 지원하므로 콜백 함수로 사용하기 편리하다. 하지만 화살표 함수를 사용하는 것이 오히려 혼란을 불러오는 경우도 있으므로 주의하여야 한다.
 
-1. 메소드 (method)
-   화살표 함수로 메소드를 정의하는 것은 피해야 한다. 화살표 함수로 메소드를 정의하여 보자.
+### 1. 메소드 (method)
+
+화살표 함수로 메소드를 정의하는 것은 피해야 한다. 화살표 함수로 메소드를 정의하여 보자.
 
 ```js
 // Bad
@@ -85,8 +86,9 @@ const person = {
 person.sayHi(); // Hi Lee
 ```
 
-2. 프로토타입 (prototype)
-   화살표 함수로 정의된 메소드를 prototype에 할당하는 경우도 동일한 문제가 발생한다. 화살표 함수로 정의된 메소드를 prototype에 할당하여 보자.
+### 2. 프로토타입 (prototype)
+
+화살표 함수로 정의된 메소드를 prototype에 할당하는 경우도 동일한 문제가 발생한다. 화살표 함수로 정의된 메소드를 prototype에 할당하여 보자.
 
 ```js
 // Bad
@@ -114,8 +116,9 @@ Object.prototype.sayHi = function () {
 person.sayHi(); // Hi Lee
 ```
 
-3. 생성자 함수
-   화살표 함수는 생성자 함수로 사용할 수 없다. 생성자 함수는 prototype 프로퍼티를 가지며 prototype 프로퍼티가 가리키는 프로토타입 객체의 constructor를 사용한다. 하지만 화살표 함수는 prototype 프로퍼티를 가지고 있지 않다.
+### 3. 생성자 함수
+
+화살표 함수는 생성자 함수로 사용할 수 없다. 생성자 함수는 prototype 프로퍼티를 가지며 prototype 프로퍼티가 가리키는 프로토타입 객체의 constructor를 사용한다. 하지만 화살표 함수는 prototype 프로퍼티를 가지고 있지 않다.
 
 ```js
 const Foo = () => {};
@@ -126,8 +129,9 @@ console.log(Foo.hasOwnProperty("prototype")); // false
 const foo = new Foo(); // TypeError: Foo is not a constructor
 ```
 
-4. addEventListener 함수의 콜백 함수
-   addEventListener 함수의 콜백 함수를 화살표 함수로 정의하면 this가 상위 컨택스트인 전역 객체 window를 가리킨다.
+### 4. addEventListener 함수의 콜백 함수
+
+addEventListener 함수의 콜백 함수를 화살표 함수로 정의하면 this가 상위 컨택스트인 전역 객체 window를 가리킨다.
 
 ```js
 // Bad
